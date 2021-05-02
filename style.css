@@ -1,0 +1,17 @@
+* {
+    box-sizing: border-box;
+}
+button {
+    all: unset;
+    box-sizing: border-box;
+    background-color: olivedrab;
+    color: white;
+    padding: 13px;
+    border-radius: 5px;
+}
+button:hover {
+    cursor: pointer;
+}
+button:active {
+    background-color: olive;
+}
