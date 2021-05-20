@@ -29,6 +29,6 @@ button:active {
 button.startBtn {
     font-size: 2rem;
 }
-article.questArt {
+section.appSec, section.questSec, section.resultSec {
     display: none;
 }
