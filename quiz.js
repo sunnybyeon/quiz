@@ -66,30 +66,35 @@ window.onload = function() {
                 }
                 question.innerHTML = obj.firstA[numA[n]];
                 numA.splice(n, 1);
+                reply01.focus();
             }
 
             function checkF() {
-                setDisplay("block", "none", "block", "none", "none");
+                setDisplay("block", "none", "flex", "none", "none");
                 const n = obj.firstA.indexOf(question.innerHTML);
                 if (obj.askNum) {
                     if (Number(reply01.value) === (n + 1) && reply02.value === obj.secA[n]) {
                         answer.style.display = "none";
-                        result.innerHTML = "정답입니다!";
+                        result.innerHTML = "정답";
+                        result.style.color = "#5d8530";
                         correct++;
                     } else {
                         answer.style.display = "block";
-                        result.innerHTML = "오답입니다."
-                        answer.innerHTML = "정답 : " + String(n + 1) + " , " + obj.secA[n];
+                        result.innerHTML = "오답"
+                        result.style.color = "#d42a2a";
+                        answer.innerHTML = String(n + 1) + " , " + obj.secA[n];
                     }
                 } else {
                     if (reply01.value === obj.secA[n]) {
                         answer.style.display = "none";
-                        result.innerHTML = "정답입니다!";
+                        result.innerHTML = "정답";
+                        result.style.color = "#5d8530";
                         correct++;
                     } else {
                         answer.style.display = "block";
-                        result.innerHTML = "오답입니다."
-                        answer.innerHTML = "정답 : "  + obj.secA[n];
+                        result.innerHTML = "오답"
+                        result.style.color = "#d42a2a";
+                        answer.innerHTML = obj.secA[n];
                     }
                 }
                 if (numA.length !== 0) {
@@ -97,6 +102,7 @@ window.onload = function() {
                 } else {
                     nextBtn.innerHTML = "결과 보기";
                 }
+                nextBtn.focus();
             }
 
             function nextQ() {
@@ -108,8 +114,9 @@ window.onload = function() {
             }
 
             function showResultQ() {
-                setDisplay("block", "none", "none", "block", "none");
+                setDisplay("block", "none", "none", "flex", "none");
                 endResult.innerHTML = String(correct) + "/" + String(obj.firstA.length);
+                endBtn.focus();
             }
 
             function endQ() {

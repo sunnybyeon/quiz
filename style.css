@@ -10,25 +10,79 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-wrap: wrap;
+    font-family: 'Source Sans Pro', 'NanumSquare', sans-serif;
+    font-size: 1.3em;
 }
 button {
     all: unset;
     box-sizing: border-box;
-    background-color: olivedrab;
-    color: white;
-    padding: 13px 26px;
-    border-radius: 26px;
+    background-color: #8fc0d8;
+    box-shadow: 2px 2px #8f8f8f;
+    font-weight: bold;
+    padding: 0.5em 0.85em;
+    margin: 0 0.5em;
+    border-radius: 6px;
+    font-size: 0.85em;
 }
 button:hover {
     cursor: pointer;
-    background-color: olive;
+    background-color: #8bb8ce;
 }
 button:active {
-    background-color: olivedrab;
+    transform: translate(1px, 1px);
+    box-shadow: none;
 }
 button.startBtn {
-    font-size: 2rem;
+    font-size: 1.2em;
 }
-section.appSec, section.questSec, section.resultSec {
+button.nextBtn, button.endBtn {
+    margin: 0 0 0 2em;
+}
+input[type=text] {
+    color: black;
+    border: 0;
+    border-bottom: 2px solid #8f8f8f;
+    transition: border, 0.25s;
+    padding: 0.4em 0.2em;
+    margin: 0.85em 0.3em;
+    font-size: 0.85em;
+    font-family: inherit;
+}
+input:focus {
+    outline: none;
+    border-bottom: 2px solid black;
+}
+section.appSec, section.questSec, section.resultSec, section.endSec {
     display: none;
+}
+section.question {
+    font-weight: bold;
+    font-size: 1.3em;
+    padding-left: 0.2em;
+}
+section.resultSec, section.endSec {
+    display: flex;
+    align-items: center;
+}
+section.resultSec > section, section.endResult {
+    padding-right: 2em;
+    border-right: 2px solid black;
+}
+section.endResult {
+    padding-right: 1em;
+    font-size: 1.6em;
+    font-weight: bold;
+}
+section.result {
+    font-weight: bold;
+    font-size: 1.5em;
+    margin: 0.2em 0;
+}
+section.answer::before {
+    content: "정답 : ";
+    font-style: normal;
+}
+section.answer {
+    font-style: italic;
 }
