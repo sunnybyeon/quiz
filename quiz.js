@@ -66,6 +66,7 @@ window.onload = function() {
             function  startQ() {
                 startBtn.style.display = "none";
                 setDisplay("block", "block", "none", "none", "none");
+                makeQ();
             }
 
             function makeQ() {
@@ -139,7 +140,6 @@ window.onload = function() {
             nextBtn.addEventListener("click", nextQ);
             endBtn.addEventListener("click", endQ);
             startQ();
-            makeQ();
         }
     }
 
