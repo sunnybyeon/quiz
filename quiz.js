@@ -143,7 +143,11 @@ window.onload = function() {
         }
     }
 
-    const korE = ["수소", "헬륨", "리튬", "베릴륨"];
-    const engE = ["H", "He", "Li", "Be"];
+    const korE = [
+        "수소", "헬륨", "리튬", "베릴륨", "붕소", "탄소", "질소", "산소", "플루오린", "네온", "소듐(나트륨)", "마그네슘", "알루미늄", "규소", "인", "황", "염소", "아르곤", "포타슘(칼륨)", "칼슘"
+    ];
+    const engE = [
+        "H", "He", "Li", "Be", "B", "C", "N", "O", "F", "Ne", "Na", "Mg", "Al", "Si", "P", "S", "Cl", "Ar", "K", "Ca"
+    ];
     const elementSymbol = new Quiz("elementSymbol", [korE, engE]);
 }
