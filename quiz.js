@@ -1,10 +1,20 @@
 window.onload = function() {
-    class Quiz_Arr {
-        constructor(id, firstA, secA, askNum) {
+    class Quiz {
+        constructor(id, content) {
             this.id = id;
-            this.firstA = firstA;
-            this.secA = secA;
-            this.askNum = askNum;
+            if (Array.isArray(content)) {                
+                this.firstA = content[0];
+                this.secA = content[1];
+                this.askNum = true;
+            } else if (typeof content === "object") {
+                this.firstA = [];
+                this.secA = [];
+                this.askNum = false;
+                for (const key in content) {
+                    this.firstA.push(key);
+                    this.secA.push(content[key]);
+                }
+            }
             // add Event
             document.getElementById(id).getElementsByClassName("startBtn")[0].addEventListener("click", function() {
                 const obj = eval(this.parentElement.getAttribute("id"));
@@ -21,6 +31,7 @@ window.onload = function() {
             const questSec = appSec.getElementsByClassName("questSec")[0];
             const question = questSec.getElementsByClassName("question")[0];
             const reply01 = questSec.getElementsByClassName("reply01")[0];
+            // reply02가 없는 경우에는 undefined
             const reply02 = questSec.getElementsByClassName("reply02")[0];
             const checkBtn = questSec.getElementsByClassName("checkBtn")[0];
             
@@ -134,5 +145,5 @@ window.onload = function() {
 
     const korE = ["수소", "헬륨", "리튬", "베릴륨"];
     const engE = ["H", "He", "Li", "Be"];
-    const elementSymbol = new Quiz_Arr("elementSymbol", korE, engE, true);
+    const elementSymbol = new Quiz("elementSymbol", [korE, engE]);
 }
