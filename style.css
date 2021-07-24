@@ -4,6 +4,16 @@
 html {
     height: 100%;
 }
+@media (max-width: 600px) {
+    input[type=text] {
+        width: 7rem;
+    }
+}
+@media (min-width: 600px) {
+    html {
+        font-size: 1.6rem;
+    }
+}
 body {
     height: 100%;
     margin: 0;
@@ -12,7 +22,6 @@ body {
     justify-content: center;
     flex-wrap: wrap;
     font-family: 'Source Sans Pro', 'NanumSquare', sans-serif;
-    font-size: 1.3em;
 }
 button {
     all: unset;
@@ -20,10 +29,10 @@ button {
     background-color: #8fc0d8;
     box-shadow: 2px 2px #8f8f8f;
     font-weight: bold;
-    padding: 0.5em 0.85em;
-    margin: 0 0.5em;
+    padding: 0.35rem 0.55rem;
+    margin: 0 0.4rem;
     border-radius: 6px;
-    font-size: 0.85em;
+    font-size: 0.7rem;
 }
 button:hover {
     cursor: pointer;
@@ -34,55 +43,55 @@ button:active {
     box-shadow: none;
 }
 button.startBtn {
-    font-size: 1.2em;
+    padding: 0.5rem 0.8rem;
+    font-size: 1rem;
 }
 button.nextBtn, button.endBtn {
-    margin: 0 0 0 2em;
+    margin-left: 2rem;
 }
 input[type=text] {
     color: black;
     border: 0;
     border-bottom: 2px solid #8f8f8f;
     transition: border, 0.25s;
-    padding: 0.4em 0.2em;
-    margin: 0.85em 0.3em;
-    font-size: 0.85em;
+    padding: 0.35rem 0.2rem;
+    margin: 0.85rem 0.2rem;
+    font-size: 0.7rem;
     font-family: inherit;
 }
 input:focus {
     outline: none;
     border-bottom: 2px solid black;
 }
-section.appSec, section.questSec, section.resultSec, section.endSec {
-    display: none;
-}
 section.question {
     font-weight: bold;
-    font-size: 1.3em;
-    padding-left: 0.2em;
+    padding-left: 0.2rem;
 }
 section.resultSec, section.endSec {
     display: flex;
     align-items: center;
 }
 section.resultSec > section, section.endResult {
-    padding-right: 2em;
+    padding-right: 2rem;
     border-right: 2px solid black;
 }
-section.endResult {
-    padding-right: 1em;
-    font-size: 1.6em;
-    font-weight: bold;
-}
 section.result {
+    font-size: 1.3rem;
     font-weight: bold;
-    font-size: 1.5em;
-    margin: 0.2em 0;
 }
 section.answer::before {
     content: "정답 : ";
     font-style: normal;
 }
 section.answer {
+    font-size: 0.9rem;
     font-style: italic;
+}
+section.endResult {
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding-right: 2rem;
+}
+section.appSec, section.questSec, section.resultSec, section.endSec {
+    display: none;
 }

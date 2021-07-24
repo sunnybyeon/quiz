@@ -88,11 +88,13 @@ window.onload = function() {
                     if (Number(reply01.value) === (n + 1) && reply02.value === obj.secA[n]) {
                         answer.style.display = "none";
                         result.innerHTML = "정답";
+                        result.style.marginBottom = "0";
                         result.style.color = "#5d8530";
                         correct++;
                     } else {
                         answer.style.display = "block";
                         result.innerHTML = "오답"
+                        result.style.marginBottom = "0.2rem"
                         result.style.color = "#d42a2a";
                         answer.innerHTML = String(n + 1) + " , " + obj.secA[n];
                     }
@@ -100,11 +102,13 @@ window.onload = function() {
                     if (reply01.value === obj.secA[n]) {
                         answer.style.display = "none";
                         result.innerHTML = "정답";
+                        result.style.marginBottom = "0";
                         result.style.color = "#5d8530";
                         correct++;
                     } else {
                         answer.style.display = "block";
                         result.innerHTML = "오답"
+                        result.style.marginBottom = "0.2rem"
                         result.style.color = "#d42a2a";
                         answer.innerHTML = obj.secA[n];
                     }
