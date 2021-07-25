@@ -4,16 +4,6 @@
 html {
     height: 100%;
 }
-@media (max-width: 600px) {
-    input[type=text] {
-        width: 7rem;
-    }
-}
-@media (min-width: 600px) {
-    html {
-        font-size: 1.6rem;
-    }
-}
 body {
     height: 100%;
     margin: 0;
@@ -59,9 +49,9 @@ input[type=text] {
     font-size: 0.7rem;
     font-family: inherit;
 }
-input:focus {
+input[type=text]:focus {
     outline: none;
-    border-bottom: 2px solid black;
+    border-bottom-color: black;
 }
 section.question {
     font-weight: bold;
@@ -94,4 +84,15 @@ section.endResult {
 }
 section.appSec, section.questSec, section.resultSec, section.endSec {
     display: none;
+}
+@media (max-width: 600px) {
+    input[type=text], input[type=text]:focus {
+        width: 7rem;
+        border-bottom-width: 1px;
+    }
+}
+@media (min-width: 600px) {
+    html {
+        font-size: 1.6rem;
+    }
 }
