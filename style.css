@@ -7,6 +7,7 @@ html {
 body {
     height: 100%;
     margin: 0;
+    padding: 0.8rem;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -85,14 +86,19 @@ section.endResult {
 section.appSec, section.questSec, section.resultSec, section.endSec {
     display: none;
 }
-@media (max-width: 600px) {
+@media (min-width: 650px) {
+    html {
+        font-size: 1.6rem;
+    }
+}
+@media (max-width: 650px) {
     input[type=text], input[type=text]:focus {
         width: 7rem;
         border-bottom-width: 1px;
     }
 }
-@media (min-width: 600px) {
-    html {
-        font-size: 1.6rem;
+@media (max-width: 400px) {
+    input[type=text] {
+        width: 6rem;
     }
 }
