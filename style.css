@@ -40,7 +40,7 @@ button.startBtn {
 button.nextBtn, button.endBtn {
     margin-left: 2rem;
 }
-input[type=text] {
+input {
     color: black;
     border: 0;
     border-bottom: 2px solid #8f8f8f;
@@ -50,7 +50,7 @@ input[type=text] {
     font-size: 0.7rem;
     font-family: inherit;
 }
-input[type=text]:focus {
+input:focus {
     outline: none;
     border-bottom-color: black;
 }
@@ -92,13 +92,13 @@ section.appSec, section.questSec, section.resultSec, section.endSec {
     }
 }
 @media (max-width: 650px) {
-    input[type=text], input[type=text]:focus {
+    input, input:focus {
         width: 7rem;
         border-bottom-width: 1px;
     }
 }
 @media (max-width: 400px) {
-    input[type=text] {
+    input {
         width: 6rem;
     }
 }
