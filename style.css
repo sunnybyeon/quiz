@@ -90,18 +90,21 @@ section.appSec, section.questSec, section.resultSec, section.endSec {
     html {
         font-size: 2rem;
     }
-    input {
-        width: 11rem;
+    input[type=number] {
+        width: 5rem;
     }
 }
 @media (max-width: 650px) {
-    input, input:focus {
+    input:not([type=number]), input:focus {
         width: 7rem;
         border-bottom-width: 1px;
     }
+    input[type=number] {
+        width: 4rem;
+    }
 }
 @media (max-width: 400px) {
-    input {
+    input:not([type=number]) {
         width: 6rem;
     }
 }
