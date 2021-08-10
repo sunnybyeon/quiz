@@ -45,6 +45,7 @@ input {
     border: 0;
     border-bottom: 2px solid #8f8f8f;
     transition: border, 0.25s;
+    width: 10rem;
     padding: 0.35rem 0.2rem;
     margin: 0.85rem 0.2rem;
     font-size: 0.7rem;
@@ -53,6 +54,9 @@ input {
 input:focus {
     outline: none;
     border-bottom-color: black;
+}
+input[type=number] {
+    width: 5rem;
 }
 section.question {
     font-weight: bold;
@@ -86,25 +90,34 @@ section.endResult {
 section.appSec, section.questSec, section.resultSec, section.endSec {
     display: none;
 }
-@media (min-width: 650px) {
+@media (min-width: 750px) {
     html {
         font-size: 2rem;
     }
-    input[type=number] {
-        width: 5rem;
+}
+@media (max-width: 750px) {
+    html {
+        font-size: 1.5rem;
+    }
+    input, input:focus {
+        border-bottom-width: 1px;
     }
 }
-@media (max-width: 650px) {
-    input:not([type=number]), input:focus {
-        width: 7rem;
-        border-bottom-width: 1px;
+@media (max-width: 550px) {
+    html {
+        font-size: 1.3rem;
+    }
+}
+@media (max-width: 500px) {
+    html {
+        font-size: 1rem;
+    }
+}
+@media (max-width: 350px) {
+    input {
+        width: 8rem;
     }
     input[type=number] {
         width: 4rem;
-    }
-}
-@media (max-width: 400px) {
-    input:not([type=number]) {
-        width: 6rem;
     }
 }
