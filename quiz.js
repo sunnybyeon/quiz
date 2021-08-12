@@ -17,7 +17,7 @@ window.addEventListener("load", function() {
             }
             // add Event
             document.getElementById(id).getElementsByClassName("startBtn")[0].addEventListener("click", function() {
-                const obj = eval(this.parentElement.getAttribute("id"));
+                const obj = quizes[this.parentElement.getAttribute("id")];
                 obj.playQ();
             });
         }
@@ -147,6 +147,8 @@ window.addEventListener("load", function() {
         }
     }
 
-    const elementSymbol = new Quiz("elementSymbol", [data.korE, data.engE]);
-    const engKor = new Quiz("engKor", data.dic);
+    const quizes = {
+        elementSymbol : new Quiz("elementSymbol", [data.korE, data.engE]),
+        engKor : new Quiz("engKor", data.dic)
+    }
 })
