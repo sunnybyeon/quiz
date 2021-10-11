@@ -148,5 +148,6 @@ class Quiz {
 
 const quizes = {
     elementSymbol : new Quiz("elementSymbol", [data.korE, data.engE]),
-    engKor : new Quiz("engKor", data.dic)
+    engKor : new Quiz("engKor", data.dic),
+    chineseChar : new Quiz('chineseChar', data.chineseChar)
 }
