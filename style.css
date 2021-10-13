@@ -16,9 +16,13 @@ body {
     padding: 0.8rem;
     display: flex;
     align-items: center;
+    align-content: center;
     justify-content: center;
     flex-wrap: wrap;
     font-family: 'Gowun Batang', 'ChosunGs', serif;
+}
+body > section {
+    margin: 0.4rem 0;
 }
 button {
     all: unset;
