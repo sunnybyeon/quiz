@@ -1,7 +1,7 @@
 class Quiz {
     constructor(id, content) {
         this.id = id;
-        if (Array.isArray(content)) {                
+        if (Array.isArray(content)) {
             this.firstA = content[0];
             this.secA = content[1];
             this.askNum = true;
@@ -15,54 +15,73 @@ class Quiz {
             }
         }
         // add Event
-        document.getElementById(id).getElementsByClassName("startBtn")[0].addEventListener("click", function() {
-            const obj = quizes[this.parentElement.getAttribute("id")];
-            obj.playQ();
-        });
+        document
+            .getElementById(id)
+            .getElementsByClassName("startBtn")[0]
+            .addEventListener("click", function () {
+                const obj = quizes[this.parentElement.getAttribute("id")];
+                obj.playQ();
+            });
     }
     playQ() {
         const obj = this;
-        
-        const startBtn = document.getElementById(this.id).getElementsByClassName("startBtn")[0];
-        
-        const appSec = document.getElementById(this.id).getElementsByClassName("appSec")[0];
-        
+
+        const startBtn = document
+            .getElementById(this.id)
+            .getElementsByClassName("startBtn")[0];
+
+        const appSec = document
+            .getElementById(this.id)
+            .getElementsByClassName("appSec")[0];
+
         const questSec = appSec.getElementsByClassName("questSec")[0];
         const question = questSec.getElementsByClassName("question")[0];
         const reply01 = questSec.getElementsByClassName("reply01")[0];
         // reply02가 없는 경우에는 undefined
         const reply02 = questSec.getElementsByClassName("reply02")[0];
         const checkBtn = questSec.getElementsByClassName("checkBtn")[0];
-        
+
         const resultSec = appSec.getElementsByClassName("resultSec")[0];
         const result = resultSec.getElementsByClassName("result")[0];
         const answer = resultSec.getElementsByClassName("answer")[0];
         const nextBtn = resultSec.getElementsByClassName("nextBtn")[0];
-        
+
         const endSec = appSec.getElementsByClassName("endSec")[0];
         const endResult = endSec.getElementsByClassName("endResult")[0];
         const endBtn = endSec.getElementsByClassName("endBtn")[0];
-        
+
         // 정답 개수 세는 변수
         let correct = 0;
         // 0부터 시작되는 숫자로 문제 배열 길이만큼 긴 배열 생성
         const numA = Array.from(Array(this.firstA.length).keys());
 
-        function  setDisplay(appSecD, questSecD, resultSecD, endSecD, otherQuizD) {
-            const appSec = document.getElementById(obj.id).getElementsByClassName("appSec")[0];
+        function setDisplay(
+            appSecD,
+            questSecD,
+            resultSecD,
+            endSecD,
+            otherQuizD
+        ) {
+            const appSec = document
+                .getElementById(obj.id)
+                .getElementsByClassName("appSec")[0];
             appSec.style.display = appSecD;
-            appSec.getElementsByClassName("questSec")[0].style.display = questSecD;
-            appSec.getElementsByClassName("resultSec")[0].style.display = resultSecD;
+            appSec.getElementsByClassName("questSec")[0].style.display =
+                questSecD;
+            appSec.getElementsByClassName("resultSec")[0].style.display =
+                resultSecD;
             appSec.getElementsByClassName("endSec")[0].style.display = endSecD;
-            const allQuiz = Array.from(document.getElementsByTagName("body")[0].children);
-            allQuiz.forEach(element => {
+            const allQuiz = Array.from(
+                document.getElementsByTagName("body")[0].children
+            );
+            allQuiz.forEach((element) => {
                 if (element.getAttribute("id") !== obj.id) {
                     element.style.display = otherQuizD;
                 }
-            })
+            });
         }
 
-        function  startQ() {
+        function startQ() {
             startBtn.style.display = "none";
             setDisplay("block", "block", "none", "none", "none");
             makeQ();
@@ -70,7 +89,7 @@ class Quiz {
 
         function makeQ() {
             setDisplay("block", "block", "none", "none", "none");
-            const n = Math.floor(Math.random() * (numA.length));
+            const n = Math.floor(Math.random() * numA.length);
             reply01.value = "";
             if (obj.askNum) {
                 reply02.value = "";
@@ -84,7 +103,10 @@ class Quiz {
             setDisplay("block", "none", "flex", "none", "none");
             const n = obj.firstA.indexOf(question.innerHTML);
             if (obj.askNum) {
-                if (Number(reply01.value) === (n + 1) && reply02.value === obj.secA[n]) {
+                if (
+                    Number(reply01.value) === n + 1 &&
+                    reply02.value === obj.secA[n]
+                ) {
                     answer.style.display = "none";
                     result.innerHTML = "정답";
                     result.style.marginBottom = "0";
@@ -92,8 +114,8 @@ class Quiz {
                     correct++;
                 } else {
                     answer.style.display = "block";
-                    result.innerHTML = "오답"
-                    result.style.marginBottom = "0.2rem"
+                    result.innerHTML = "오답";
+                    result.style.marginBottom = "0.2rem";
                     result.style.color = "#d42a2a";
                     answer.innerHTML = String(n + 1) + " , " + obj.secA[n];
                 }
@@ -106,8 +128,8 @@ class Quiz {
                     correct++;
                 } else {
                     answer.style.display = "block";
-                    result.innerHTML = "오답"
-                    result.style.marginBottom = "0.2rem"
+                    result.innerHTML = "오답";
+                    result.style.marginBottom = "0.2rem";
                     result.style.color = "#d42a2a";
                     answer.innerHTML = obj.secA[n];
                 }
@@ -124,13 +146,14 @@ class Quiz {
             if (numA.length !== 0) {
                 makeQ();
             } else {
-                showResultQ();                    
+                showResultQ();
             }
         }
 
         function showResultQ() {
             setDisplay("block", "none", "none", "flex", "none");
-            endResult.innerHTML = String(correct) + "/" + String(obj.firstA.length);
+            endResult.innerHTML =
+                String(correct) + "/" + String(obj.firstA.length);
             endBtn.focus();
         }
 
@@ -147,9 +170,9 @@ class Quiz {
 }
 
 const quizes = {
-    elementSymbol : new Quiz("elementSymbol", [data.korE, data.engE]),
-    engKor : new Quiz("engKor", data.dic),
-    chineseChar : new Quiz('chineseChar', data.chineseChar),
-    earthlyBranches : new Quiz('earthlyBranches', data.earthlyBranches),
-    classicalChinese : new Quiz('classicalChinese', data.classicalChinese),
-}
+    elementSymbol: new Quiz("elementSymbol", [data.korE, data.engE]),
+    engKor: new Quiz("engKor", data.dic),
+    chineseChar: new Quiz("chineseChar", data.chineseChar),
+    earthlyBranches: new Quiz("earthlyBranches", data.earthlyBranches),
+    classicalChinese: new Quiz("classicalChinese", data.classicalChinese),
+};

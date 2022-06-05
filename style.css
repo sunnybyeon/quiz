@@ -1,6 +1,7 @@
 @font-face {
-    font-family: 'ChosunGs';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@1.0/ChosunGs.woff') format('woff');
+    font-family: "ChosunGs";
+    src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@1.0/ChosunGs.woff")
+        format("woff");
     font-weight: normal;
     font-style: normal;
 }
@@ -19,7 +20,7 @@ body {
     align-content: center;
     justify-content: center;
     flex-wrap: wrap;
-    font-family: 'Gowun Batang', 'ChosunGs', serif;
+    font-family: "Gowun Batang", "ChosunGs", serif;
 }
 body > section {
     margin: 0.4rem 0;
@@ -47,7 +48,8 @@ button.startBtn {
     padding: 0.5rem 0.8rem;
     font-size: 1rem;
 }
-button.nextBtn, button.endBtn {
+button.nextBtn,
+button.endBtn {
     margin-left: 2rem;
 }
 input {
@@ -65,7 +67,7 @@ input:focus {
     outline: none;
     border-bottom-color: black;
 }
-input[type=number] {
+input[type="number"] {
     width: 5rem;
 }
 section.question:not(:lang(zh-Hant)) {
@@ -73,11 +75,13 @@ section.question:not(:lang(zh-Hant)) {
     font-weight: bold;
     padding-left: 0.2rem;
 }
-section.resultSec, section.endSec {
+section.resultSec,
+section.endSec {
     display: flex;
     align-items: center;
 }
-section.resultSec > section, section.endResult {
+section.resultSec > section,
+section.endResult {
     padding-right: 2rem;
     border-right: 2px solid black;
 }
@@ -98,7 +102,10 @@ section.endResult {
     font-weight: bold;
     padding-right: 2rem;
 }
-section.appSec, section.questSec, section.resultSec, section.endSec {
+section.appSec,
+section.questSec,
+section.resultSec,
+section.endSec {
     display: none;
 }
 
@@ -111,7 +118,8 @@ section.appSec, section.questSec, section.resultSec, section.endSec {
     html {
         font-size: 1.5rem;
     }
-    input, input:focus {
+    input,
+    input:focus {
         border-bottom-width: 1px;
     }
 }
@@ -129,7 +137,7 @@ section.appSec, section.questSec, section.resultSec, section.endSec {
     input {
         width: 8rem;
     }
-    input[type=number] {
+    input[type="number"] {
         width: 4rem;
     }
 }
